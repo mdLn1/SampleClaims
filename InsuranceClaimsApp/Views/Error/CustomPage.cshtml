@@ -1,0 +1,10 @@
+﻿@model InsuranceClaimsApp.Models.Error.CustomPageViewModel
+@{
+    ViewData["Title"] = Model.StatusCodeText;
+}
+
+<h1 class="text-danger">Ooops!  @Model.StatusCode @Model.StatusCodeText </h1>
+@if (!string.IsNullOrWhiteSpace(Model.SoughtPath))
+{
+    <h2>Sought page @Model.SoughtPath</h2>
+}

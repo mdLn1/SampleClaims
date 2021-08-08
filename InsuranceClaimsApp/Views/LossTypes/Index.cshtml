@@ -1,0 +1,36 @@
+﻿@model IEnumerable<InsuranceClaimsApp.Models.DTOs.LossTypeDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Loss Types</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LossTypeCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LossTypeDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LossTypeCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LossTypeDescription)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.LossTypeId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
